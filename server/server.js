@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import schoolRouter from './routes/school';
+import classRouter from './routes/class';
 
 const app = express();
 app.use(cors());
@@ -11,8 +12,8 @@ app.use(express.json({
 
 const port = process.env.PORT || 8000;
 
-
 app.use('/schools?', schoolRouter);
+app.use('/class(es)?', classRouter);
 
 
 app.get('/', (req, res) => {

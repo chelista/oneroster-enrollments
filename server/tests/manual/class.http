@@ -1,0 +1,102 @@
+# Generated to test classes endpoint with the Intellij HTTP client
+# This tests assumes two schools with id 1 and 2
+
+POST http://localhost:8000/classes
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"school_id": 1,
+"name": "English 1"
+}
+
+###
+
+POST http://localhost:8000/class
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"school_id": 2,
+"name": "Algebra 1"
+}
+
+###
+
+GET http://localhost:8000/classes
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/classes/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/class/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+PUT http://localhost:8000/classes/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"school_id": 2,
+"name": "English 2"
+}
+
+###
+
+PUT http://localhost:8000/class/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"school_id": 1,
+"name": "English 1"
+}
+
+###
+
+PATCH http://localhost:8000/classes/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "Geometry 1"
+}
+
+###
+
+PATCH http://localhost:8000/classes/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "Economics"
+}
+
+###
+
+DELETE http://localhost:8000/classes/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8000/class/2
+Accept: */*
+Cache-Control: no-cache
+
+###
