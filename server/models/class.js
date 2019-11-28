@@ -17,6 +17,17 @@ class Class extends Model {
             }
         };
     }
+
+    static relationMappings = {
+        school: {
+            relation: Model.BelongsToOneRelation,
+            modelClass: `${__dirname}/school`,
+            join: {
+                from: 'class.school_id',
+                to: 'school.id'
+            }
+        }
+    }
 }
 
 module.exports = Class;
