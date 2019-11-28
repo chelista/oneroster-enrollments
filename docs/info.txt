@@ -1,0 +1,11 @@
+For the following error:
+node_modules/svelte-routing/src/index.js ENOSPC
+
+Use the following command:
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+Solution is here:
+https://stackoverflow.com/questions/22475849/node-js-what-is-enospc-error-and-how-to-solve
+
+Details:
+https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details

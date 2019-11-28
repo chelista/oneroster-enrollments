@@ -1,0 +1,97 @@
+# Generated to test initial module with the Intellij HTTP client #
+
+POST http://localhost:8000/schools
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink High"
+}
+
+###
+
+POST http://localhost:8000/school
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink Elementary"
+}
+
+###
+
+GET http://localhost:8000/schools
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/schools/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/school/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+PUT http://localhost:8000/schools/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink Academy"
+}
+
+###
+
+PUT http://localhost:8000/school/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink K12"
+}
+
+###
+
+PATCH http://localhost:8000/schools/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink High"
+}
+
+###
+
+PATCH http://localhost:8000/schools/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"name": "ClassLink Elementary"
+}
+
+###
+
+DELETE http://localhost:8000/schools/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8000/school/2
+Accept: */*
+Cache-Control: no-cache
+
+###
