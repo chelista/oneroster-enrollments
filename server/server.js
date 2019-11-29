@@ -4,6 +4,7 @@ import cors from 'cors';
 import statsRouter from './routes/stats';
 import schoolRouter from './routes/school';
 import classRouter from './routes/class';
+import userRouter from './routes/user';
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,7 @@ const port = process.env.PORT || 8000;
 app.use('/stats', statsRouter);
 app.use('/schools?', schoolRouter);
 app.use('/class(es)?', classRouter);
+app.use('/users?', userRouter);
 
 app.get('/', (req, res) => {
   res.status(200).send('OneRoster csv file generator');

@@ -1,0 +1,107 @@
+# Generated to test initial module with the Intellij HTTP client #
+
+POST http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"username": "jane.doe",
+"password": "asdf123*1",
+"first_name": "Jane",
+"last_name": "Doe",
+"type": "teacher"
+}
+
+###
+
+POST http://localhost:8000/user
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"username": "john.doe",
+"password": "asdf123*1",
+"first_name": "John",
+"last_name": "Doe",
+"type": "teacher"
+}
+
+###
+
+GET http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8000/user/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+PUT http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"last_name": "Smith"
+}
+
+###
+
+PUT http://localhost:8000/user/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"password": "123123123",
+"first_name": "John"
+}
+
+###
+
+PATCH http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"password": "321321321",
+"last_name": "Doe"
+}
+
+###
+
+PATCH http://localhost:8000/users/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"username": "john.doe"
+}
+
+###
+
+DELETE http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8000/user/2
+Accept: */*
+Cache-Control: no-cache
+
+###
