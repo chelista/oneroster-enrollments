@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "migrate": "knex migrate:latest",
-    "start": "sh utils/kill8000.sh && ./node_modules/.bin/nodemon ./node_modules/.bin/babel-node server.js",
+    "start": "sh ./utils/kill8000.sh && ./node_modules/.bin/nodemon ./node_modules/.bin/babel-node server.js",
     "build": "rm -rf build && babel . --out-dir build --ignore ./node_modules,./npm-debug-log --copy-files"
   },
   "devDependencies": {

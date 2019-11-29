@@ -5,3 +5,4 @@ yarn-error.log
 oneroster.db
 
 client/public/build/*
+client/public/extra.css
