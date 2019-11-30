@@ -8,6 +8,8 @@
     import Stats from './Stats.svelte';
     import School from './School.svelte';
     import Class from './Class.svelte';
+    import Teacher from './User/Teacher.svelte'
+    import Student from './User/Student.svelte';
 </script>
 
 <style>
@@ -20,6 +22,8 @@
         <Route path="/" component={Stats}/>
         <Route path="/schools" component={School}/>
         <Route path="/classes" component={Class}/>
+        <Route path="/teachers" component={Teacher}/>
+        <Route path="/students" component={Student}/>
     </div>
 </Router>
 
