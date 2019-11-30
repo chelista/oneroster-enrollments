@@ -1,5 +1,5 @@
 import CrudRouter from '../core/router';
-import Model from '../models/user';
-import Controller from '../controllers/user';
+import Model from '../models/student';
+import Controller from '../controllers/student';
 
 export default CrudRouter(new Controller(Model))

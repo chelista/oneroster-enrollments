@@ -1,0 +1,121 @@
+# Generated to test initial module with the Intellij HTTP client #
+
+POST http://localhost:8000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "jonasstern",
+  "password": "abcabcabc",
+  "first_name": "Jonas",
+  "last_name": "Stern"
+}
+
+###
+
+POST http://localhost:8000/student
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "claudiaboyd",
+  "password": "abcabcabc",
+  "first_name": "Claudia",
+  "last_name": "Boyd"
+}
+
+###
+
+GET http://localhost:8000/students
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Create students to attempt to retrieve no students
+GET http://localhost:8000/students/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Create students to attempt to retrieve no students
+GET http://localhost:8000/student/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Notice that it is allowed to change type
+PUT http://localhost:8000/students/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "claudiab",
+  "type": "teacher"
+}
+
+###
+# Changing a student should not be possible
+PUT http://localhost:8000/student/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "jonaswillis",
+  "last_name": "Willis"
+}
+
+###
+# Revert type using the students endpoint
+# which has the same behavior. The problem is
+# that once changed, then it is inaccessible
+# but the controller. Should this be restricted?
+PUT http://localhost:8000/teacher/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "jonasstern",
+  "type": "student"
+}
+
+###
+
+PATCH http://localhost:8000/students/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "last_name": "Williams"
+}
+
+###
+
+PATCH http://localhost:8000/students/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "first_name": "Stephanie",
+  "last_name": "Boyd"
+}
+
+###
+
+DELETE http://localhost:8000/students/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8000/student/2
+Accept: */*
+Cache-Control: no-cache
+
+###

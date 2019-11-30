@@ -1,0 +1,124 @@
+# Generated to test initial module with the Intellij HTTP client #
+
+POST http://localhost:8000/teachers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"username": "peterson",
+"password": "abcabcabc",
+"first_name": "Richard",
+"last_name": "Peterson"
+}
+
+###
+
+POST http://localhost:8000/teacher
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "jennymartin",
+  "password": "abcabcabc",
+  "first_name": "Jenny",
+  "last_name": "Martin"
+}
+
+###
+
+GET http://localhost:8000/teachers
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Create students to attempt to retrieve no teachers
+GET http://localhost:8000/teachers/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Create students to attempt to retrieve no teachers
+GET http://localhost:8000/teacher/2
+Accept: */*
+Cache-Control: no-cache
+
+###
+# Notice that it is allowed to change type
+PUT http://localhost:8000/teachers/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "amy.johnson",
+  "password": "asdffdsa",
+  "first_name": "Amy",
+  "last_name": "Johnson",
+  "type": "student"
+}
+
+###
+# Changing a student should not be possible
+PUT http://localhost:8000/teacher/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "rich",
+  "last_name": "paterson"
+}
+
+###
+# Revert type using the students endpoint
+# which has the same behavior. The problem is
+# that once changed, then it is inaccessible
+# but the controller. Should this be restricted?
+PUT http://localhost:8000/students/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "username": "peterson",
+  "type": "teacher"
+}
+
+###
+
+PATCH http://localhost:8000/teachers/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"last_name": "Paterson"
+}
+
+###
+
+PATCH http://localhost:8000/teachers/2
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+"first_name": "Emily",
+"last_name": "Lewis"
+}
+
+###
+
+DELETE http://localhost:8000/teachers/1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8000/teacher/2
+Accept: */*
+Cache-Control: no-cache
+
+###
