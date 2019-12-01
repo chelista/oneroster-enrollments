@@ -28,7 +28,7 @@ exports.up = function(knex) {
 };
 
 exports.down = knex => {
-  return knex.schema.dropTableIfExists('school').
+  return knex.schema.dropTableIfExists('user').
       dropTableIfExists('class').
-      dropTableIfExists('user');
+      dropTableIfExists('school');
 };

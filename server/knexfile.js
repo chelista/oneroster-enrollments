@@ -11,7 +11,10 @@ module.exports = {
       }
     },
     migrations: {
-      directory: './migrations'
+      directory: './config/migrations'
+    },
+    seeds: {
+      directory: './config/seeds'
     },
   },
 
