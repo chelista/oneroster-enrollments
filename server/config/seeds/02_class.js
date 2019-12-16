@@ -1,7 +1,7 @@
 import RandomData from '../../core/random-data';
 
-exports.seed = function (knex) {
-    return knex('class').del().then(function () {
+exports.seed = knex => {
+    return knex('class').del().then(() => {
         return knex('class').insert([
             {
                 id: 1,

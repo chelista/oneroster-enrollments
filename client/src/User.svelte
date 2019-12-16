@@ -56,7 +56,7 @@
         {#each users as user}
             <tr class="user">
                 <td class="user-name">{user.creation_id}</td>
-                <td class="school-name">school</td>
+                <td class="school-name">{user.school.name}</td>
                 <td class="user-creation-id">{user.username}</td>
                 <td class="first-name">{user.first_name}</td>
                 <td class="last-name">{user.last_name}</td>

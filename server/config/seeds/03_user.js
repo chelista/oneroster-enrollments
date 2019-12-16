@@ -25,7 +25,7 @@ const type = function(ratio) {
  *
  * @returns {[]}
  */
-let users = function() {
+let users = () => {
     const row = [];
     const num = 100;
 
@@ -33,6 +33,7 @@ let users = function() {
         row.push({
             id: id,
             creation_id: RandomData.creationId(),
+            school_id: Math.floor((Math.random() * 4) + 1),
             type: type(7),
             username: word(Math.random() > .5 ? 7 : 9),
             password: word(Math.random() > .5 ? 7 : 9),
